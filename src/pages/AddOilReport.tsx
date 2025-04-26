@@ -354,6 +354,15 @@ const AddOilReport: React.FC = () => {
                     }}
                   />
                 </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <TextField
+                    fullWidth
+                    type="number"
+                    label="الإجماليات"
+                    value={formData.totals}
+                    onChange={(e) => handleChange('totals', parseInt(e.target.value) || 0)}
+                  />
+                </Grid>
               </Grid>
             </Grid>
 

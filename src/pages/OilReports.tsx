@@ -140,7 +140,8 @@ const OilReports: React.FC = () => {
       waterOutputLiters: report.waterOutputLiters,
       startTime: report.startTime,
       endTime: report.endTime,
-      entryDate: report.entryDate
+      entryDate: report.entryDate,
+      totals: report.totals || 0
     });
     setOpenEditDialog(true);
   };
@@ -721,6 +722,15 @@ const OilReports: React.FC = () => {
                       <option value="مورد جديد">مورد جديد</option>
                     </TextField>
                   </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="رقم الدورة"
+                      value={editedReport.cycleNumber || ''}
+                      onChange={(e) => handleEditFieldChange('cycleNumber', e.target.value)}
+                      margin="normal"
+                    />
+                  </Grid>
                 </Grid>
               </Grid>
 
@@ -768,6 +778,16 @@ const OilReports: React.FC = () => {
                       label="صافي الإنتاج"
                       value={editedReport.totalNetProduction || 0}
                       onChange={(e) => handleEditFieldChange('totalNetProduction', parseInt(e.target.value))}
+                      margin="normal"
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      type="number"
+                      label="الإجماليات"
+                      value={editedReport.totals || 0}
+                      onChange={(e) => handleEditFieldChange('totals', parseInt(e.target.value))}
                       margin="normal"
                     />
                   </Grid>
