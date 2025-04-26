@@ -34,7 +34,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +58,9 @@
   },
   "devDependencies": {
     "@supabase/supabase-js": "^2.49.4",
-    "@types/uuid": "^10.0.0"
-  }
+    "@types/uuid": "^10.0.0",
+    "gh-pages": "^6.3.0"
+  },
+  "homepage": "https://alshowaiterElias.github.io/alaffif_oil_comapny"
+  
 }
